@@ -8,5 +8,3 @@ def main () :
     #w or L
 
     #display record
-
-    
