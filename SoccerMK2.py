@@ -45,3 +45,5 @@ def play_game(home_team, opp_team):
 # Final record function
 
 # Main function. Calls the other functions
+
+# I'm messing with the commit stuff and trying to push so here is a new line to mess with.
