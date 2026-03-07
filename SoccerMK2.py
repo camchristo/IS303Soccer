@@ -1,4 +1,4 @@
-# Team Memeber:
+# Team Memeber: 
 # Cameron Christopher
 # 2
 # 3
@@ -23,8 +23,24 @@ def menu():
     choice = input("Enter a choice: ").strip()
     return choice
 
-# Team Choice function
-def team_choice() :
+# Team Choice function, default list is Big 12 teams
+def team_choice(team_list = None) :
+    #Setting the default
+    if team_list is None :
+        team_list = ["Arizona State", "Arizona", "BYU", "Baylor", "Cincinnati", "Colorado", "Houston", "Iowa State", "Kansas", 
+                 "Kansas State", "Oklahoma State", "TCU", "Texas Tech", "UCF", "Utah", "West Virginia"]
+    #Display list of all teams and allow the user to choose a team using a menu. 
+    print(team_list)
+    sHomeTeam = input("\nChoose a home team from this list: ")
+    team_list.remove(sHomeTeam)
+
+
+    print(team_list)
+    sOpponent = input("\nNow choose a team to play against: ")
+    print("Your opponent will be " + sOpponent)
+
+
+    return sHomeTeam, sOpponent
 
 # Play Game function. Recieve both team names, genereates a random sore, no ties, returns a W or L for the Home team.
 def play_game(home_team, opp_team):
