@@ -1,7 +1,7 @@
 # Team Memeber: 
 # Cameron Christopher
-# 2
-# 3
+# Carter Moser
+# Zackery Schaub
 
 import random 
  
@@ -29,12 +29,12 @@ def team_choice(team_list = None, sHomeTeam = None) :
     if team_list is None :
         team_list = ["Arizona State", "Arizona", "BYU", "Baylor", "Cincinnati", "Colorado", "Houston", "Iowa State", "Kansas", 
                  "Kansas State", "Oklahoma State", "TCU", "Texas Tech", "UCF", "Utah", "West Virginia"]
-    #Display list of all teams and allow the user to choose a team using a menu. 
+    #Display list of all teams and allow the user to choose a team using a menu. Remove the home team as an option
     if sHomeTeam == None :
         print(team_list)
         sHomeTeam = input("\nChoose a home team from this list: ")
         team_list.remove(sHomeTeam)
-
+    #Choose opponent and only oponent if it is the second time
     print(team_list)
     sOpponent = input("\nNow choose a team to play against: ")
     print("Your opponent will be " + sOpponent)
@@ -73,6 +73,7 @@ def main():
     results = []
     home_team = None
     team_list = None
+    # Create while loop that displays menu and final recored when exited. 
     while True:
         choice = menu()
         if choice == 1:
@@ -84,6 +85,6 @@ def main():
             break
         else:
             print("Invalid choice, please enter 1 or 2.")
-
+#Call main function
 main()
 # I'm messing with the commit stuff and trying to push so here is a new line to mess with.
