@@ -1,8 +1,8 @@
-# Team Memeber: 
+# Team Member: 
 # Cameron Christopher
 # Carter Moser
 # Zackery Schaub
-# March 9, 2025
+# March 10, 2026
 
 import random 
  
@@ -35,14 +35,14 @@ def team_choice(team_list = None, sHomeTeam = None) :
         print(team_list)
         sHomeTeam = input("\nChoose a home team from this list: ")
         team_list.remove(sHomeTeam)
-    #Choose opponent and only oponent if it is the second time
+    #Choose opponent and only opponent if it is the second time
     print(team_list)
     sOpponent = input("\nNow choose a team to play against: ")
     print("Your opponent will be " + sOpponent)
 
     return sHomeTeam, sOpponent, team_list
 
-# Play Game function. Recieve both team names, genereates a random sore, no ties, returns a W or L for the Home team.
+# Play Game function. Receives both team names, generates a random score, no ties, returns a W or L for the Home team.
 def play_game(home_team, opp_team):
 
     home_score = random.randint(0, 5)
@@ -67,14 +67,14 @@ def final_record(team_name, results):
     print(f"Wins:   {wins}")
     print(f"Losses: {losses}")
     print(f"Record: {wins}-{losses}")
-# Main function. Calls the other functions
 
+# Main function. Calls the other functions
 def main():
     player_name = intro()
     results = []
     home_team = None
     team_list = None
-    # Create while loop that displays menu and final recored when exited. 
+    # Create while loop that displays menu and final record when exited. 
     while True:
         choice = menu()
         if choice == 1:
@@ -82,10 +82,13 @@ def main():
             result = play_game(home_team, away_team)
             results.append(result)
         elif choice == 2:
-            final_record(home_team, results)
+            if home_team is not None:
+                final_record(home_team, results)
+            else:
+                print("No games played. Goodbye!")
             break
         else:
             print("Invalid choice, please enter 1 or 2.")
-#Call main function
+
+# Call main function
 main()
-# I'm messing with the commit stuff and trying to push so here is a new line to mess with.
